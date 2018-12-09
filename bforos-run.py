@@ -35,7 +35,7 @@ def bforos_run():
 
 def bforos_register_usage(request_body):
     ssl._create_default_https_context = ssl._create_unverified_context
-    bforos_url = 'https://labs.linkingdata.io:3000/api/CountRO'
+    bforos_url = 'https://hyperledger.blockchain4openscience.com/api/CountRO'
     req = urllib.request.Request(bforos_url)
     req.add_header('Content-Type', 'application/json; charset=utf-8')
     json_data = json.dumps(request_body)

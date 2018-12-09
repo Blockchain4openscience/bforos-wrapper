@@ -11,7 +11,7 @@ def foo():
     if args.v:
         print("""
         Sample Open Science App v0.0
-        BFOROS Id: f0dbb5db575b13efe43d11dd5631ce684f680ed6f55a64d931cc915363a00e5f
+        BFOROS Id: https://github.com/ficolo/biotea-annotation
         """)
     else:
         print('Foo was called with:' + str(args.args))
