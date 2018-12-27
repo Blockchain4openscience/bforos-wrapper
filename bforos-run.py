@@ -13,7 +13,7 @@ parser.add_argument('app_args', metavar='<arguments>', type=str, nargs='*', help
 
 def bforos_run():
     args = parser.parse_args()
-    os_app_info = check_output([args.open_science_app, "-v"]).decode("utf-8").strip()
+    os_app_info = check_output(args.open_science_app + " -v", shell=True).decode("utf-8").strip()
     header = os_app_info.split('\n')[0]
     app_name = header.split('v')[0].strip()
     app_version = header.split('v')[1].strip()
@@ -29,6 +29,7 @@ def bforos_run():
         """.format(app_name, app_version, args)
     }
     bforos_register_usage(bforos_data)
+    print("Usage registered at Blockchain for Open Science Ledger")
     call([args.open_science_app, *args.app_args])
     return
 
